@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Please Forgive Me ❤️</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    }
+
+    button {
+      background-color: #fff;
+      border: none;
+      color: #ff4b5c;
+      font-size: 1.2rem;
+      padding: 12px 25px;
+      margin: 10px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: #ff4b5c;
+      color: white;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="question">Please forgive me for not immediately calling back 😔💬</h1>
+  <div>
+    <button id="yesBtn">Yes 💕</button>
+    <button id="noBtn">No 😢</button>
+  </div>
+
+  <script>
+    const question = document.getElementById("question");
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    const responses = [
+      "Pretty please 🥺",
+      "With puppy eyes 🐶💞",
+      "I promise I’ll call right away 📞💗",
+      "Don’t be mad 😢",
+      "You know you can’t stay mad at me 😘",
+      "Okay now please? 🥹",
+      "Come on… forgive me 💖"
+    ];
+    let noClickCount = 0;
+
+    noBtn.addEventListener("click", () => {
+      if (noClickCount < responses.length) {
+        yesBtn.textContent = responses[noClickCount];
+        noClickCount++;
+      } else {
+        question.textContent = "Yay! I knew you'd forgive this stupid banda of yours who is madly in love with you 😭😘😍💐";
+        yesBtn.classList.add("hidden");
+        noBtn.classList.add("hidden");
+      }
+    });
+
+    yesBtn.addEventListener("click", () => {
+      question.textContent = "Aww, thank you! You're the best,and i loveeeeee youuuuuuuu 😭😭😭😭😘😘😘😘😘😘💞";
+      yesBtn.classList.add("hidden");
+      noBtn.classList.add("hidden");
+    });
+  </script>
+</body>
+</html>
